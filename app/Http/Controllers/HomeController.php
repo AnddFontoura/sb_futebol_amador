@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Team;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends HelperController
 {
     public const USER_TYPE_PLAYER = 1;
-    public const USER_TYPE_FOOTBALL_CURT = 2;
+    public const USER_TYPE_FOOTBALL_COURT = 2;
 
     /**
      * Create a new controller instance.
@@ -27,19 +28,16 @@ class HomeController extends HelperController
      */
     public function index()
     {
-        return view('home');
-    }
+        switch(Auth::user()->user_type_id) {
+            case self::USER_TYPE_PLAYER:
 
-    public function dashboard() {
+                return view('user.dashboard');
+                break;
 
-        if(Auth::user()->type_id == self::USER_TYPE_PLAYER) {
+            case self::USER_TYPE_FOOTBALL_COURT:
 
-
-            return view('user.dashboard');
-        } if ( Auth::user()->type_id == self::USER_TYPE_FOOTBALL_COURT) {
-
-
-            return view('court.dashboard');
+                return view('court.dashboard');
+                break;
         }
     }
 }

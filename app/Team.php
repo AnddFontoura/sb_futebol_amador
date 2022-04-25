@@ -15,11 +15,17 @@ class Team extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'city_id', 'name','description','logo'
+        'user_id',
+        'city_id',
+        'name',
+        'description',
+        'logo'
     ];
 
     protected $date = [
-        'updated_at', 'created_at','deleted_at'
+        'updated_at',
+        'created_at',
+        'deleted_at'
     ];
 
 

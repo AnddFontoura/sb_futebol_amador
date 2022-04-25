@@ -13,5 +13,12 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home','HomeController@dashboard')->name('dashboard');
+Route::get('/','HomeController@index');
+
+Route::middleware(['auth'])->prefix('player')->group(function() {
+
+    Route::prefix('information')->group(function() {
+        Route::get('profile', 'PlayerController@profile');
+    });
+});
+
