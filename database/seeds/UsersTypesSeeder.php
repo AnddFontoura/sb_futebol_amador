@@ -27,6 +27,12 @@ class UserTypesSeeder extends Seeder
                 'name' => 'Quadra',
                 'created_at' => Carbon::now()->format('Y-m-d h:i:s'),
             ],
+
+            [ 
+                'id' => 3, 
+                'name' => 'Sociedade Esportiva',
+                'created_at' => Carbon::now()->format('Y-m-d h:i:s'),
+            ],
         ]);
     }
 }

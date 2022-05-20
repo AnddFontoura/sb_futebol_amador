@@ -21,6 +21,7 @@ class CreateUserProfilesTable extends Migration
             $table->string('language', 5)->default('pt_br');
             $table->string('social_name', 150)->nullable();
             $table->string('nickname', 100)->nullable();
+            $table->enum('gender', ['MALE','FEMALE'])->nullable()->default('MALE');
             $table->text('description', 1000)->nullable();
             $table->date('birthday')->nullable();
             $table->string('photo', 1000)->nullable();

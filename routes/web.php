@@ -19,6 +19,7 @@ Route::middleware(['auth'])->prefix('player')->group(function() {
 
     Route::prefix('information')->group(function() {
         Route::get('profile', 'PlayerController@profile');
+        Route::get('profile/edit', 'PlayerController@profileForm');
     });
 });
 

@@ -4,8 +4,8 @@
 <form class="form-signin col-md-4 offset-md-4 col-sm-12" method="POST" action="{{ route('login') }}">
     @csrf
   <div class="text-center mb-4">
-    <h1 class="h3 mb-3 font-weight-normal">DEFESA</h1>
-    <h3>ESPETACULAR</a></p>
+    <h1 class="h3 mb-3 font-weight-normal">SBFA</h1>
+    <h3>SISTEMA BRASILEIRO DE FUTEBOL AMADOR</a></p>
   </div>
 
   <div class="form-label-group">

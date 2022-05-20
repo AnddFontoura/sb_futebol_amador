@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\UserProfile;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PlayerController extends Controller
 {
-    public function profile()
+    public function profile(): View
     {
         $userId = Auth::user()->id;
         $userProfile = UserProfile::where('user_id', $userId)->first();
 
-        return view('player.profile', compact('userProfile'));
+        return view('player.profile.view', compact('userProfile'));
+    }
+
+    public function profileForm()
+    {
+        $userId = Auth::user()->id;
+        $userProfile = UserProfile::where('user_id', $userId)->first();
+
+        return view('player.profile.form', compact('userProfile'));
     }
 
     public function profileSave(Request $request)
@@ -26,6 +35,7 @@ class PlayerController extends Controller
             'social_name',
             'nickname',
             'description',
+            'gender',
             'birthday',
             'photo',
             'banner',
@@ -45,6 +55,7 @@ class PlayerController extends Controller
             'social_name',
             'nickname',
             'description',
+            'gender',
             'birthday',
             'photo',
             'banner',
